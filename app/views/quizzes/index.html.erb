@@ -1,0 +1,19 @@
+
+
+ <body>
+ 
+  <div class="bg-mask">
+   <div class="title">Rails Quiz</div>
+   
+   <h1>問題一覧</h1>
+   <div class="qsmenu">
+    <% @quiz.each do |quiz| %>
+      <%= quiz.title %>
+      <%=link_to "問題へ", "/quizzes/#{quiz.id}/edit", method: :get  %><br>
+    <% end %>
+    
+  </div>
+    <%=link_to "トップへ", tops_path, method: :get  %>
+ </body>
+ 
+</html>

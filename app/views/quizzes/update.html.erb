@@ -1,0 +1,24 @@
+<html>
+ <head></head>
+ 
+ <body>
+  <div class="bg-mask">
+  <div class="qsupdate">
+    <h5><%= @quiz.questions %></h5>
+    <h2>正解</h2>
+    <%= @quiz.c_answer %>
+    <h5>あなたの回答</h5>
+    <% if @quiz.c_answer == @quiz.answer %>
+      <puts>○</puts>  <%= @quiz.answer %>
+    <% else %>
+      <puts>×</puts> <%= @quiz.answer %>
+    <% end %>
+    <h5>学習メモ</h5>
+    <%= @quiz.comment %>
+   
+   
+    <p><%= link_to '一覧へ戻る', quizzes_path, method: :get %></p>
+  </div>
+  </div>
+ </body>
+</html>

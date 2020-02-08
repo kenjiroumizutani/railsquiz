@@ -1,0 +1,27 @@
+<html>
+ <head></head>
+ 
+ <body>
+   <header>
+    <% if user_signed_in? %>
+      <h1>ようこそ<%=current_user.username %>さん　Rails Quizへ！</h1>
+      <%=link_to "logout", destroy_user_session_path, method: :delete  %>
+    <% else %>
+     <%=link_to "login", new_user_session_path, method: :get  %>
+    <% end %>
+     
+   </header>
+  <div class="bg-mask">
+   <div class="title">Rails Quiz</div>
+   
+   <div class="select">
+      <%=link_to "問題",quizzes_path, method: :get %><br>
+   </div>
+   
+   <div class="select">
+      <%=link_to "マイページ",user_path(current_user), method: :get %><br>
+   </div>
+  </div>
+ </body>
+ 
+</html>
